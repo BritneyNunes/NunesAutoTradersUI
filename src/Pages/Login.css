@@ -1,0 +1,140 @@
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #ffffff;
+}
+
+.login-image {
+  flex: 1 1 50%;
+  margin: 40px;
+  border-radius: 4px;
+  background: url("../assets/LogInImage.jpg") center / cover no-repeat;
+  /* background: linear-gradient(160deg, #2b2f36 0%, #14161a 65%, #0a0b0d 100%); */
+}
+
+.login-panel {
+  flex: 1 1 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.login-panel-inner {
+  width: 100%;
+  max-width: 320px;
+}
+
+.login-title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #1a1a1a;
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.field-label {
+  font-size: 14px;
+  color: #1a1a1a;
+}
+
+.field-input {
+  border: 1px solid #b0b0b5;
+  border-radius: 4px;
+  padding: 9px 12px;
+  font-size: 14px;
+  color: #1a1a1a;
+  font-family: inherit;
+  background: #ffffff;
+}
+
+.field-input::placeholder {
+  color: #9a9a9f;
+}
+
+.field-input:focus {
+  outline: none;
+  border-color: #1450e0;
+  box-shadow: 0 0 0 3px rgba(20, 80, 224, 0.15);
+}
+
+.form-error {
+  margin: -8px 0 0;
+  font-size: 13px;
+  color: #d33;
+}
+
+.connect-btn {
+  margin-top: 12px;
+  background: #1450e0;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.connect-btn:hover:not(:disabled) {
+  background: #1140bd;
+}
+
+.connect-btn:disabled {
+  background: #7d99e8;
+  cursor: not-allowed;
+}
+
+.connect-btn:focus-visible,
+.field-input:focus-visible {
+  outline: 2px solid #1450e0;
+  outline-offset: 2px;
+}
+
+.login-footer {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #5a5a5f;
+  text-align: center;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  color: #1450e0;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .login-page {
+    flex-direction: column;
+  }
+
+  .login-image {
+    flex: 0 0 220px;
+    margin: 20px;
+  }
+
+  .login-panel {
+    padding: 32px 24px;
+  }
+}

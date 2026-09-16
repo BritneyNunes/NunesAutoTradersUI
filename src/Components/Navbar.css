@@ -1,0 +1,144 @@
+:root {
+  --bg: #ffffff;
+  --text: #1a1a1a;
+  --border: #eceef0;
+  --accent: #d1272e;
+  --accent-2: #1a2a4a;
+}
+
+[data-theme="dark"] {
+  --bg: #14161a;
+  --text: #f2f2f2;
+  --border: #2a2d33;
+  --accent: #e0393f;
+  --accent-2: #9aa8d1;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 48px;
+  border-bottom: 2px solid var(--border);
+  background: var(--bg);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 40px;
+}
+
+.navbar-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar a {
+  text-decoration: none;
+}
+
+.navbar-links a:hover {
+  color: var(--accent);
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  /* gap: 24px; */
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.navbar-logo {
+  font-size: 40px;
+  font-weight: 600;
+}
+
+.logo-nunesauto {
+  color: var(--accent);
+}
+
+.logo-traders {
+  color: var(--accent-2);
+}
+
+.navbar-profile {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.navbar--overlay .navbar-profile {
+  background: var(--accent);
+}
+
+@media (max-width: 800px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px 20px;
+  }
+
+  .navbar-links {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+
+  .navbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+.navbar--overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  background: transparent;
+  border-bottom: none;
+}
+
+.navbar--overlay .theme-toggle {
+  background: var(--bg);
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.navbar--overlay .navbar-links a:hover {
+  color: var(--accent);
+}
+
+.navbar--overlay .logo-nunesauto {
+  color: var(--accent);
+}
+
+.navbar--overlay .logo-traders {
+  color: #ffffff;
+}

@@ -1,0 +1,355 @@
+.inventory-page {
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.2s ease, color 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.inventory-content {
+  padding: 40px 48px;
+}
+
+.inventory-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.inventory-title {
+  margin: 0;
+  font-size: 40px;
+  font-weight: 600;
+  color: var(--accent-2);
+}
+
+.inventory-filters {
+  display: flex;
+  gap: 12px;
+}
+
+.inventory-filters select {
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 7px 10px;
+  font-size: 13px;
+  background: var(--bg);
+  color: var(--text);
+  cursor: pointer;
+  width: 130px;
+}
+
+.inventory-status {
+  color: var(--accent-2);
+  font-size: 14px;
+}
+
+.inventory-status.error {
+  color: var(--accent);
+}
+
+.inventory-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+}
+
+.car-card {
+  background: #16264a;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.car-card:hover {
+  transform: translateY(-3px);
+}
+
+.car-card-image {
+  width: 100%;
+  height: 160px;
+  overflow: hidden;
+}
+
+.car-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.car-card-image-placeholder {
+  width: 100%;
+  height: 160px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.car-card-body {
+  padding: 14px 16px 18px;
+  color: #ffffff;
+}
+
+.car-card-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.car-card-year {
+  margin: 2px 0 10px;
+  font-size: 12px;
+  opacity: 0.7;
+}
+
+.car-card-price {
+  margin: 0 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.car-card-make {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.car-card-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.car-tag {
+  background: var(--accent);
+  color: #ffffff;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Modal */
+
+.car-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+
+.car-modal {
+  background: var(--bg);
+  color: var(--text);
+  border-radius: 10px;
+  max-width: 420px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.car-modal-image {
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.car-modal-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.car-modal-image-placeholder {
+  width: 100%;
+  height: 220px;
+  background: var(--border);
+}
+
+.car-modal-image {
+  position: relative;
+}
+
+.image-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 8px 12px;
+  border-radius: 6px;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-btn {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.carousel-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.image-counter {
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  min-width: 60px;
+  text-align: center;
+}
+
+.car-modal-body {
+  padding: 20px 24px 24px;
+}
+
+.car-modal-make {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-2);
+}
+
+.car-modal-title {
+  margin: 2px 0 8px;
+  font-size: 20px;
+}
+
+.car-modal-price {
+  margin: 0 0 18px;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.car-modal-specs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.spec-label {
+  display: block;
+  font-size: 11px;
+  text-transform: uppercase;
+  color: var(--accent-2);
+  letter-spacing: 0.04em;
+}
+
+.spec-value {
+  display: block;
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.car-modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-close-btn,
+.modal-contact-btn {
+  flex: 1;
+  border: none;
+  border-radius: 6px;
+  padding: 11px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.modal-close-btn {
+  background: var(--accent);
+}
+
+.modal-contact-btn {
+  background: var(--accent-2);
+}
+
+.car-card-make {
+  margin: 0 0 2px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  text-transform: uppercase;
+}
+
+.car-modal-description {
+  margin: 0 0 18px;
+  font-size: 13px;
+  color: var(--text);
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.car-modal-overlay {
+  animation: overlayFadeIn 0.25s ease forwards;
+}
+
+@keyframes overlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.car-modal {
+  animation: modalPopIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform-origin: var(--origin-x, center) var(--origin-y, center);
+}
+
+@keyframes modalPopIn {
+  from {
+    opacity: 0;
+    transform: scale(0.85) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@media (max-width: 700px) {
+  .inventory-content {
+    padding: 24px 20px;
+  }
+
+  .inventory-filters {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .inventory-filters select {
+    width: 100%;
+  }
+}
