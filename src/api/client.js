@@ -1,6 +1,6 @@
 import { Base64 } from "js-base64";
 
-export const API_URL = "https://nunesautotradersbackend.onrender.com";
+export const API_URL = process.env.API_URL;
 
 /**
  * Core fetch wrapper for all API calls.
